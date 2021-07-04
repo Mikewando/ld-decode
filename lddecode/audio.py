@@ -10,7 +10,7 @@ import threading
 import time
 
 from functools import partial
-from multiprocessing import Process, Queue, JoinableQueue, Pipe
+from multiprocess import Process, Queue, JoinableQueue, Pipe
 
 # standard numeric/scientific libraries
 import numpy as np

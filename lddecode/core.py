@@ -4,7 +4,7 @@ import sys
 import threading
 import time
 
-from multiprocessing import Process, Queue, JoinableQueue, Pipe
+from multiprocess import Process, Queue, JoinableQueue, Pipe
 
 # standard numeric/scientific libraries
 import numpy as np
@@ -1150,7 +1150,7 @@ class DemodCache:
                 item = self.q_in.get()
 
             if item is None or item[0] == "END":
-                return
+                os._exit(0)
 
             if item[0] == "DEMOD":
                 blocknum, block, target_MTF = item[1:]

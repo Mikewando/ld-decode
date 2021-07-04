@@ -11,9 +11,10 @@ import json
 import math
 import os
 import sys
+import shutil
 import subprocess
 
-from multiprocessing import Process, Pool, Queue, JoinableQueue, Pipe
+from multiprocess import Process, Pool, Queue, JoinableQueue, Pipe
 import threading
 import queue
 
@@ -957,7 +958,7 @@ def write_json(ldd, outname):
     fp.write("\n")
     fp.close()
 
-    os.rename(outname + ".tbc.json.tmp", outname + ".tbc.json")
+    shutil.move(outname + ".tbc.json.tmp", outname + ".tbc.json")
 
 
 # Write the .tbc.json file (used by lddecode and notebooks)
@@ -968,7 +969,7 @@ def write_json(ldd, jsondict, outname):
     fp.write("\n")
     fp.close()
 
-    os.rename(outname + ".tbc.json.tmp", outname + ".tbc.json")
+    shutil.move(outname + ".tbc.json.tmp", outname + ".tbc.json")
 
 
 def jsondump_thread(ldd, outname):

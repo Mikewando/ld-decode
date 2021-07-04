@@ -148,3 +148,5 @@ macx {
 INCLUDEPATH += "/usr/local/lib/qwt.framework/Versions/6/Headers"
 LIBS += -F"/usr/local/lib" -framework qwt
 }
+INCLUDEPATH += "C:/msys64/mingw64/include/qwt"
+LIBS += "C:/msys64/mingw64/lib/libqwt.dll.a"
